@@ -8,6 +8,10 @@ import classes from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favoriteShow = useSelector((state) => state.fav.favorites);
+  let message = ''; 
+  if (favoriteShow.length > 0) {
+    message = 'clique no filme para excluir da lista de favoritos!';
+  }
   const dispatch = useDispatch();
   const deleteFavoriteHandler = (title) => {
     dispatch(favoriteActions.removeElement(title));
@@ -15,7 +19,8 @@ const FavoritesPage = () => {
   
   return (
     <Fragment>
-      <h2 className={classes.h2}>Página de favoritos!</h2>
+      <h2 className={classes.h2}>Filmes favoritos!</h2>
+      <p className={classes.p}>{message}</p>
       <ul className={classes.ul}>
           {favoriteShow.map(item => <li key={item.title} onClick={deleteFavoriteHandler.bind(null, item.title)}>
             <img src={BASE_URL + "w"+ IMAGE_SIZE + item.image} alt={item.title} />
