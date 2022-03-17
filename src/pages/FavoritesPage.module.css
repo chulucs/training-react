@@ -1,0 +1,13 @@
+.h2 {
+    margin-top: 80px;
+}
+
+.ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2.4rem;
+}
+.ul li {
+    padding: 0.7rem;
+}

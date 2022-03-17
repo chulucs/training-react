@@ -1,0 +1,44 @@
+.moveContainer {
+  position: relative;
+}
+.movie-list {
+  list-style: none;
+  height: 29vh;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+}
+
+.button {
+  font-size: 3rem;
+  font-weight: bolder;
+  height: 68%;
+  width: 5%;
+  vertical-align: middle;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(87, 84, 84, 0.3);
+}
+
+.button:first-of-type {
+  position: absolute;
+  top: 5px;
+  left: 0.5%;
+}
+
+.button:last-of-type {
+  position: absolute;
+  top: 0;
+  right: 0.5%;
+}
+
+.button:hover {
+  background: rgba(0,0,0, 0.6);
+}
+
+@media(max-width:40rem) {
+  .button {
+  font-size: 2rem;
+  text-align: center;
+  }
+}

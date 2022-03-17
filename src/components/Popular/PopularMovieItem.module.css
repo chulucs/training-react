@@ -1,0 +1,12 @@
+.listItem {
+  display: inline-block;
+  margin: 0 0.9rem;
+}
+
+.listItem h4 {
+  margin: 0.1rem;
+}
+
+.listItem:hover {
+  transform: scale(1.1);
+}

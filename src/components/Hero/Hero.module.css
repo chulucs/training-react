@@ -1,0 +1,84 @@
+.hero-container {
+  position: relative;
+  width: 100vw;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  position: absolute;
+  top: 15%;
+  left: 3%;
+}
+
+.hero-description {
+  position: absolute;
+  width: 45vw;
+  top: 32%;
+  left: 3%;
+  text-align: left;
+}
+
+.hero-btn {
+  position: absolute;
+  bottom: 20%;
+  left: 2%;
+  font-weight: bold;
+}
+
+.hero-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button:first-of-type {
+  background-color: white;
+  font-weight: inherit;
+  cursor: pointer;
+  color: black;
+}
+
+.button:last-of-type {
+  margin-left: 0.8rem;
+  color: aliceblue;
+  cursor: not-allowed;
+}
+
+.button:first-of-type:hover {
+  background-color: rgba(161, 158, 158, 0.836);
+}
+
+.newBackGround {
+  background-color: transparent;
+}
+
+@media(max-width: 40rem) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    width: 90vw;
+    font-size: 0.7rem;
+    top: 35%;
+    padding: 0 0.7rem;
+  }
+
+  .hero-btn {
+    bottom: 3%;
+  }
+
+  .button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

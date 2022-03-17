@@ -1,0 +1,63 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.main-header.active {
+  background-color: black;
+}
+
+.main-header h1 {
+  color: red;
+  margin-left: 15px;
+  font-size: 1.4rem;
+  animation: title-carnival 1s 20 none;
+}
+
+.main-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 2.5rem;
+}
+
+.main-header li {
+  display: inline-block;
+}
+
+.main-header a {
+  color: white;
+  text-decoration: none;
+}
+.main-header a:hover,
+.main-header a:active {
+  color: rgb(151, 147, 147);
+}
+
+.main-header a.active {
+  font-weight: bolder;
+  border-bottom: 1px solid white;
+}
+
+@keyframes title-carnival {
+  0% {
+    color: green;
+    transform: rotateZ(0);
+  }
+  33% {
+    color: orange;
+    transform: rotateZ(-10deg);
+  }
+
+
+  100% {
+    color: red;
+    transform: rotateZ(10deg);
+  }
+}
