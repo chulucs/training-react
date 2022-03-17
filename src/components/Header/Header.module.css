@@ -15,20 +15,23 @@
 
 .main-header h1 {
   color: red;
-  margin-left: 15px;
+  margin-left: 0.9rem;
   font-size: 1.4rem;
   animation: title-carnival 1s 20 none;
 }
 
 .main-header ul {
   list-style: none;
+  display: flex;
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
   margin-left: 2.5rem;
 }
 
 .main-header li {
-  display: inline-block;
+  /* display: inline-block; */
+  margin-right: 1rem;
 }
 
 .main-header a {

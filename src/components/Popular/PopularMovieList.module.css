@@ -3,8 +3,10 @@
 }
 .movie-list {
   list-style: none;
-  height: 29vh;
-  vertical-align: middle;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
   text-align: center;
   overflow: hidden;
 }
@@ -36,7 +38,7 @@
   background: rgba(0,0,0, 0.6);
 }
 
-@media(max-width:40rem) {
+@media(max-width:47rem) {
   .button {
   font-size: 2rem;
   text-align: center;

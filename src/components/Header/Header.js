@@ -18,7 +18,7 @@ const Header = () => {
         <h1>FETNLIX</h1>
         <ul>
             <li><NavLink className={(navData) => navData.isActive ? classes.active : "" } to='/'>Início</NavLink></li>
-            <li><NavLink className={(navData) => navData.isActive ? classes.active : "" } to='favorites'>Favoritos</NavLink></li>
+            <li><NavLink className={(navData) => navData.isActive ? classes.active : "" } to='/favorites'>Favoritos</NavLink></li>
         </ul>
     </div>
 }

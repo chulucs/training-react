@@ -76,10 +76,10 @@
   color: white;
 }
 
-@media(max-width: 40rem) {
+@media(max-width: 47rem) {
   .modal {
     width: 342px;
-    left: 10vw;
+    left: 0;
   }
   .modal--container__button {
     width: 30%;
