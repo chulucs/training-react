@@ -16,3 +16,10 @@
 .ul li {
     padding: 0.7rem;
 }
+
+@media (max-width: 40rem) {
+    .ul {
+        display: block;
+        margin: 1rem auto;
+    }
+}
