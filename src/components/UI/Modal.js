@@ -43,7 +43,7 @@ const Modal = (props) => {
           </div>
         </div>
         <div className={classes["modal--container__button"]}>
-          <button onClick={addListHandler}>Add to list</button>
+          <button onClick={addListHandler}>Favoritar</button>
         </div>
       </div>
     </Fragment>

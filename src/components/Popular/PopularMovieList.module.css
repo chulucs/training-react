@@ -5,8 +5,8 @@
   list-style: none;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   text-align: center;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
 .button {
   font-size: 3rem;
   font-weight: bolder;
-  height: 68%;
+  height: 100%;
   width: 5%;
   vertical-align: middle;
   border: none;
@@ -24,8 +24,8 @@
 
 .button:first-of-type {
   position: absolute;
-  top: 5px;
-  left: 0.5%;
+  top: 0;
+  left: 1%;
 }
 
 .button:last-of-type {

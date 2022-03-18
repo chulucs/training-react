@@ -18,14 +18,21 @@ const PopularMovieItem = (props) => {
   const closeModalHandler = () => {
     setOpenModal(false);
   }
+  let classList = '';
+  if (props.slider === 1) {
+    classList = `${classes.listItem} ${classes['listItem--right']}`;
+  } else if (props.slider === -1) {
+    classList = `${classes.listItem} ${classes['listItem--left']}`;
+  } else {
+    classList = `${classes.listItem}`;
+  }
 
   return (
     <Fragment>
-      <li className={classes.listItem} onClick={openModalHandler}>
+      <li className={classList} onClick={openModalHandler}>
         <div>
           <div>
             <img src={BASE_URL + "w" +IMAGE_SIZE + props.imageUrl} alt="" />
-            <p>{props.title}</p>
           </div>
         </div>
       </li>

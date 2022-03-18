@@ -9,6 +9,7 @@ let indexCount = 1;
 
 const PopularMovieList = (props) => {
   const [carousel, setCarousel] = useState([]);
+  const [slider, setSlider] = useState(null);
   const totalMoviesOnScreen = Math.floor(window.innerWidth / (+IMAGE_SIZE +10));
   const totalIndex = Math.floor(props.popular.length / totalMoviesOnScreen);
 
@@ -50,6 +51,7 @@ const PopularMovieList = (props) => {
       arrayHelper.push(props.popular[(indexCount - 1) * totalMoviesOnScreen + i]);
     }
     setCarousel(arrayHelper);
+    setSlider(n);
   };
   
   return (
@@ -65,6 +67,7 @@ const PopularMovieList = (props) => {
               id={item.id}
               releaseDate={item.release_date}
               imagePoster={item.poster_path}
+              slider={slider}
 
             />
           );

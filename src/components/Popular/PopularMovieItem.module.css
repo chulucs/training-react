@@ -1,7 +1,40 @@
+.listItem.listItem--left {
+  animation-name: slider-left ;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+}
+
+.listItem.listItem--right {
+  animation-name: slider-right ;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+}
+
 .listItem h4 {
   margin: 0.1rem;
 }
 
 .listItem:hover {
   transform: scale(1.1);
+}
+
+
+@keyframes slider-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slider-right {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
 }
