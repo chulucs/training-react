@@ -2,13 +2,10 @@
   position: relative;
 }
 .movie-list {
-  list-style: none;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
-  text-align: center;
-  overflow: hidden;
 }
 
 .button {
@@ -25,13 +22,13 @@
 .button:first-of-type {
   position: absolute;
   top: 0;
-  left: 1%;
+  left: 0;
 }
 
 .button:last-of-type {
   position: absolute;
   top: 0;
-  right: 0.5%;
+  right: 0;
 }
 
 .button:hover {

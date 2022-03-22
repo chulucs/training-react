@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import PopularMovieItem from "./PopularMovieItem";
 import { IMAGE_SIZE } from "./PopularMovieItem";
 
@@ -13,31 +13,31 @@ const PopularMovieList = (props) => {
   const totalMoviesOnScreen = Math.floor(window.innerWidth / (+IMAGE_SIZE +10));
   const totalIndex = Math.floor(props.popular.length / totalMoviesOnScreen);
 
-  const initialValue = useCallback(
-    (popularArray) => {
-      const carouselHandler = [];
-      for (let i = 0; i < totalMoviesOnScreen; i++) {
-        carouselHandler.push(popularArray[i]);
-      }
+  // const initialValue = useCallback(
+  //   (popularArray) => {
+  //     const carouselHandler = [];
+  //     for (let i = 0; i < totalMoviesOnScreen; i++) {
+  //       carouselHandler.push(popularArray[i]);
+  //     }
 
-      setCarousel(carouselHandler);
-    },
-    [totalMoviesOnScreen]
-  );
+  //     setCarousel(carouselHandler);
+  //   },
+  //   [totalMoviesOnScreen]
+  // );
 
   useEffect(() => {
     //   const timer = setTimeout(() => {
     //       initialValue(props.popular);
     //   }, 300)
     if (ready) {
-      initialValue(props.popular);
+      setCarousel(props.popular);
     }
 
     return () => {
       ready = true;
       //   clearTimeout(timer);
     };
-  }, [props.popular, initialValue]);
+  }, [props.popular]);
 
   const plusSlide = (n) => {
     const arrayHelper = [];
@@ -56,7 +56,7 @@ const PopularMovieList = (props) => {
   
   return (
     <div className={classes.moveContainer}>
-      <ul className={classes["movie-list"]}>
+      <div className={classes["movie-list"]}>
         {carousel.map((item) => {
           return (
             <PopularMovieItem
@@ -68,11 +68,10 @@ const PopularMovieList = (props) => {
               releaseDate={item.release_date}
               imagePoster={item.poster_path}
               slider={slider}
-
             />
           );
         })}
-      </ul>
+      </div>
       <button className={classes.button} onClick={plusSlide.bind(null, -1)}>
         {"<"}
       </button>

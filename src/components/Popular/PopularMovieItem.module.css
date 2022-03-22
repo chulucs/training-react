@@ -1,3 +1,7 @@
+.listItem {
+  margin: 0 0.5rem;
+}
+
 .listItem.listItem--left {
   animation-name: slider-left ;
   animation-duration: 400ms;

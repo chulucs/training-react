@@ -18,6 +18,7 @@ const PopularMovieItem = (props) => {
   const closeModalHandler = () => {
     setOpenModal(false);
   }
+  
   let classList = '';
   if (props.slider === 1) {
     classList = `${classes.listItem} ${classes['listItem--right']}`;
@@ -29,13 +30,13 @@ const PopularMovieItem = (props) => {
 
   return (
     <Fragment>
-      <li className={classList} onClick={openModalHandler}>
+      <div className={classList} onClick={openModalHandler}>
         <div>
           <div>
             <img src={BASE_URL + "w" +IMAGE_SIZE + props.imageUrl} alt="" />
           </div>
         </div>
-      </li>
+      </div>
       {openModal && ReactDom.createPortal(<Backdrop onClose={closeModalHandler} />, document.getElementById("backdrop"))}
       {openModal && ReactDom.createPortal(
         <Modal
