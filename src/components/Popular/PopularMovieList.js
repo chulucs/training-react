@@ -4,12 +4,12 @@ import { IMAGE_SIZE } from "./PopularMovieItem";
 
 import classes from "./PopularMovieList.module.css";
 
-let sliderDirection;
-let scrollValue = 0;
 
 const PopularMovieList = (props) => {
   const slider = useRef();
   const [carousel, setCarousel] = useState([]);
+  let sliderDirection;
+  let scrollValue = 0;
   // const [slider, setSlider] = useState(null);
   const totalMoviesOnScreen = Math.floor(
     window.innerWidth / (+IMAGE_SIZE + 10)
@@ -29,7 +29,6 @@ const PopularMovieList = (props) => {
     }
 
     if (n === -1) {
-  
       scrollValue -= scrollWidth;
       slider.current.scrollTo({
         top: 0,
