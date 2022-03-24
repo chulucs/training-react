@@ -6,7 +6,7 @@ import Modal from "../UI/Modal";
 import classes from "./PopularMovieItem.module.css";
 
 export const BASE_URL = "https://image.tmdb.org/t/p/";
-export const IMAGE_SIZE = "300";
+export const IMAGE_SIZE = "185";
 
 const PopularMovieItem = (props) => {
   const [openModal, setOpenModal] = useState(false);
@@ -18,7 +18,7 @@ const PopularMovieItem = (props) => {
   const closeModalHandler = () => {
     setOpenModal(false);
   }
-  
+
   let classList = '';
   if (props.slider === 1) {
     classList = `${classes.listItem} ${classes['listItem--right']}`;

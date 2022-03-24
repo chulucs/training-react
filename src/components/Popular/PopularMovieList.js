@@ -1,62 +1,56 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PopularMovieItem from "./PopularMovieItem";
 import { IMAGE_SIZE } from "./PopularMovieItem";
 
 import classes from "./PopularMovieList.module.css";
 
-let ready = false;
-let indexCount = 1;
+let sliderDirection;
+let scrollValue = 0;
 
 const PopularMovieList = (props) => {
+  const slider = useRef();
   const [carousel, setCarousel] = useState([]);
-  const [slider, setSlider] = useState(null);
-  const totalMoviesOnScreen = Math.floor(window.innerWidth / (+IMAGE_SIZE +10));
-  const totalIndex = Math.floor(props.popular.length / totalMoviesOnScreen);
-
-  // const initialValue = useCallback(
-  //   (popularArray) => {
-  //     const carouselHandler = [];
-  //     for (let i = 0; i < totalMoviesOnScreen; i++) {
-  //       carouselHandler.push(popularArray[i]);
-  //     }
-
-  //     setCarousel(carouselHandler);
-  //   },
-  //   [totalMoviesOnScreen]
-  // );
+  // const [slider, setSlider] = useState(null);
+  const totalMoviesOnScreen = Math.floor(
+    window.innerWidth / (+IMAGE_SIZE + 10)
+  );
+  const scrollWidth = totalMoviesOnScreen * +IMAGE_SIZE;
 
   useEffect(() => {
-    //   const timer = setTimeout(() => {
-    //       initialValue(props.popular);
-    //   }, 300)
-    if (ready) {
-      setCarousel(props.popular);
-    }
-
-    return () => {
-      ready = true;
-      //   clearTimeout(timer);
-    };
+    setCarousel(props.popular);
   }, [props.popular]);
 
   const plusSlide = (n) => {
-    const arrayHelper = [];
-    indexCount += n;
-    if (indexCount > totalIndex) {
-      indexCount = 1;
-    } else if (indexCount < 1) {
-      indexCount = totalIndex;
+    sliderDirection = n;
+    if (scrollValue < 0) {
+      scrollValue = 0;
+    } else if (scrollValue >= slider.current.scrollWidth - window.innerWidth) {
+      scrollValue = slider.current.scrollWidth - window.innerWidth;
     }
-    for (let i = 0; i < totalMoviesOnScreen; i++) {
-      arrayHelper.push(props.popular[(indexCount - 1) * totalMoviesOnScreen + i]);
-    }
-    setCarousel(arrayHelper);
-    setSlider(n);
-  };
+
+    if (n === -1) {
   
+      scrollValue -= scrollWidth;
+      slider.current.scrollTo({
+        top: 0,
+        left: scrollValue,
+        behavior: "smooth",
+      });
+    }
+    if (n === 1) {
+      scrollValue += scrollWidth;
+      slider.current.scrollTo({
+        top: 0,
+        left: scrollValue,
+        behavior: "smooth",
+      });
+      console.log(scrollValue, slider.current.scrollWidth);
+    }
+  };
+
   return (
     <div className={classes.moveContainer}>
-      <div className={classes["movie-list"]}>
+      <div className={classes["movie-list"]} ref={slider}>
         {carousel.map((item) => {
           return (
             <PopularMovieItem
@@ -67,7 +61,7 @@ const PopularMovieList = (props) => {
               id={item.id}
               releaseDate={item.release_date}
               imagePoster={item.poster_path}
-              slider={slider}
+              slider={sliderDirection}
             />
           );
         })}

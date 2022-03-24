@@ -3,9 +3,8 @@
 }
 .movie-list {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .button {

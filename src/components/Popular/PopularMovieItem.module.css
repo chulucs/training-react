@@ -1,16 +1,16 @@
 .listItem {
-  margin: 0 0.5rem;
+  margin: 0 0.3rem;
 }
 
 .listItem.listItem--left {
   animation-name: slider-left ;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-iteration-count: 1;
 }
 
 .listItem.listItem--right {
   animation-name: slider-right ;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-iteration-count: 1;
 }
 
