@@ -6,6 +6,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import MainPage from "./pages/MainPage";
 import Hero from "./components/Hero/Hero";
 import TitlePage from "./pages/TitlePage";
+import Footer from "./components/Footer/Footer";
 
 const URL = "https://api.themoviedb.org/3";
 const API_KEY = "fe62fa52c7523251a631f478b7314ce8";
@@ -133,6 +134,7 @@ function App() {
         <Route path="/favorites/:title" element={<TitlePage />} />
         <Route path="/*" element={<MainPage />} />
       </Routes>
+      <Footer />
     </Fragment>
   );
 }
