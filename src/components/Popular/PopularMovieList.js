@@ -35,6 +35,7 @@ const PopularMovieList = (props) => {
         left: scrollValue,
         behavior: "smooth",
       });
+      console.log(scrollValue, slider.current.scrollWidth);
     }
     if (n === 1) {
       scrollValue += scrollWidth;
